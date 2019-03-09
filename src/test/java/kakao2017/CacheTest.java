@@ -18,24 +18,31 @@ public class CacheTest {
          * 0	            [Jeju, Pangyo, Seoul, NewYork, LA]	                                                        25
          */
         Cache cache = new Cache();
+
         assertEquals(cache.solution(3,
                 new String[]{"Jeju", "Pangyo", "Seoul", "NewYork", "LA",
                         "Jeju", "Pangyo", "Seoul", "NewYork", "LA"}), 50);
+
         assertEquals(cache.solution(3,
                 new String[]{"Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo",
                         "Seoul", "Jeju", "Pangyo", "Seoul"}), 21);
+
         assertEquals(cache.solution(2,
                 new String[]{"Jeju", "Pangyo", "Seoul", "NewYork", "LA",
                         "SanFrancisco", "Seoul", "Rome", "Paris", "Jeju",
                         "NewYork", "Rome"}), 60);
+
         assertEquals(cache.solution(5,
                 new String[]{"Jeju", "Pangyo", "Seoul", "NewYork", "LA",
                         "SanFrancisco", "Seoul", "Rome", "Paris", "Jeju",
                         "NewYork", "Rome"}), 52);
+
         assertEquals(cache.solution(2,
                 new String[]{"Jeju", "Pangyo", "NewYork", "newyork"}), 16);
+
         assertEquals(cache.solution(0,
                 new String[]{"Jeju", "Pangyo", "Seoul", "NewYork", "LA"}), 25);
+
     }
 
 }

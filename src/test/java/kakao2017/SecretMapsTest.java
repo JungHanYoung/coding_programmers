@@ -8,6 +8,7 @@ public class SecretMapsTest {
     @Test
     public void solution() {
         SecretMaps secretMaps = new SecretMaps();
+
         assertArrayEquals(
                 secretMaps.solution(5,
                 new int[]{9, 20, 28, 18, 11},
