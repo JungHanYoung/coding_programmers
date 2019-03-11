@@ -8,6 +8,7 @@ import java.util.Map;
 public class Camouflage {
 
     public int solution(String[][] clothes) {
+        int answer;
         // [ ["..", ".."], ["..", ".."] ]
         Map<String, List<String>> map = new HashMap<>();
         for(String[] strArr : clothes) {
@@ -24,14 +25,11 @@ public class Camouflage {
             }
         }
 
-        for(int i = 0; i < map.keySet().size(); i++) {
-            // 3, 2, 1 = (3*2*1) + (3*2, 3*1, 2*1) + (3, 2, 1)
-        }
+        answer = map.values().stream()
+                .mapToInt(val -> val.size() + 1)
+                .reduce(1, (a, b) -> a * b);
 
 
-        map.entrySet()
-                .forEach(System.out::println);
-
-        return -1;
+        return answer-1;
     }
 }
