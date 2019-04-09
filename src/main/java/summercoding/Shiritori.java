@@ -60,14 +60,14 @@ public class Shiritori {
             int seq = queue.poll();
             if(seq == 1) loop++;
 
-            /* TODO: 첫번째 단어를 제외하고 앞 단어와의 비교를 해야함. */
+            /* 첫번째 단어를 제외하고 앞 단어와의 비교를 해야함. */
             if(i != 0 && stack.peek().charAt(stack.peek().length() - 1) != words[i].charAt(0)) {
                 answers[0] = seq;
                 answers[1] = loop;
                 break;
             }
             stack.push(words[i]);
-            /* TODO: 중복 단어 체크 */
+            /* 중복 단어 체크 */
             if(!set.add(words[i])) {
                 answers[0] = seq;
                 answers[1] = loop;
@@ -75,41 +75,6 @@ public class Shiritori {
             }
             queue.offer(seq);
         }
-
-//        int i = 0;
-
-//        do {
-//
-//            int seq = queue.poll();
-//            if(seq == 1) loop++;
-//
-//            if(!set.add(words[i])) {
-//
-//            }
-//
-//        }while(stack.peek().charAt(stack.peek().length() - 1) == words[i].charAt(0));
-
-//        for(String word : words) {
-//            int seq = queue.poll();
-//            if(seq == 1) { /* TODO 한바퀴 돈 것을 확인해야함. */
-//                loop++;
-//            }
-//            /* TODO 이전 단어의 끝음을 따르는 지 확인해야. */
-//            if(stack.peek().charAt(stack.peek().length() - 1) == word.charAt(0)) {
-//                System.out.println("앞 단어의 끝음을 따르지 않음!");
-//                answers[0] = loop;
-//                answers[1] = seq;
-//                break;
-//            }
-//            System.out.println(seq + ": " + word);
-//            if(!set.add(word) /* TODO 중복 단어를 체크해야함. */) {
-//                System.out.println("단어 중복을 확인했습니다!");
-//                answers[0] = loop;
-//                answers[1] = seq;
-//                break;
-//            }
-//            queue.offer(seq);
-//        }
 
         return answers;
     }
